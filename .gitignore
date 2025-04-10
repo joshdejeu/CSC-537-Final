@@ -1,3 +1,10 @@
+# TODO - broken
+setup/convert_coco_to_yolo.py
+runs/*
+# Pre-trained YOLO models
+*.pt
+train/resume_training.py
+
 # Has over 1GB of image data (GitHub limit 100MB per file)
 datasets/images/*
 datasets/labels/*
