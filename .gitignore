@@ -4,6 +4,6 @@ datasets/labels/*
 tmp/*
 
 # Allow the folders themselves and .gitkeep (GitHub doesn't track empty folders)
-!datasets/images/ .gitkeep
-!datasets/labels/ .gitkeep
+!datasets/images/.gitkeep
+!datasets/labels/.gitkeep
 !tmp/.gitkeep
