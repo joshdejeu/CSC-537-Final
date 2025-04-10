@@ -6,7 +6,7 @@ import os
 import shutil
 
 # Paths
-root_dir = "datasets/mju-waste" # Output folder with sub folders (train, test, val)
+root_dir = "datasets/images" # Output folder with sub folders (train, test, val)
 jpeg_dir = "tmp/JPEGImages" # Big folder with ALL images
 imagesets_dir = "tmp/ImageSets/Segmentation" # Specifies which image go in which folders
 

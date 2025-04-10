@@ -1,3 +1,6 @@
+# ============================
+# Downloads MJU images from google drive
+# ============================
 
 import gdown
 import zipfile

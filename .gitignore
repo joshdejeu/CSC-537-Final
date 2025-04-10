@@ -1,14 +1,9 @@
 # Has over 1GB of image data (GitHub limit 100MB per file)
-datasets/mju-waste/test/*
-datasets/mju-waste/train/*
-datasets/mju-waste/val/*
+datasets/images/*
+datasets/labels/*
 tmp/*
 
 # Allow the folders themselves and .gitkeep (GitHub doesn't track empty folders)
-!datasets/mju-waste/test/
-!datasets/mju-waste/train/
-!datasets/mju-waste/val/
-!datasets/mju-waste/test/.gitkeep
-!datasets/mju-waste/train/.gitkeep
-!datasets/mju-waste/val/.gitkeep
+!datasets/images/ .gitkeep
+!datasets/labels/ .gitkeep
 !tmp/.gitkeep
