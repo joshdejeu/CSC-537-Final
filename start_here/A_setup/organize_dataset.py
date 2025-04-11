@@ -13,7 +13,7 @@ imagesets_dir = "tmp/ImageSets/Segmentation" # Specifies which image go in which
 splits = ['train', 'val', 'test']
 
 for split in splits:
-    print(f"Splitting: {split.upper()}")
+    print(f"Splitting: {split}")
     split_file = os.path.join(imagesets_dir, f"{split}.txt")
     out_dir = os.path.join(root_dir, split)
     os.makedirs(out_dir, exist_ok=True) # Check if folders exist

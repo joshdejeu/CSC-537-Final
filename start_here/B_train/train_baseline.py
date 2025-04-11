@@ -12,7 +12,7 @@ model = YOLO("yolov8s-seg.pt")
 model.train(
     data="datasets/mju.yaml",
     epochs=50,
-    imgsz=640,
+    imgsz=640, # Reduce to 416 or 320 if training too slow
     name="baseline_mju"
 )
 
