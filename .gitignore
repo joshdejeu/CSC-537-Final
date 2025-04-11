@@ -1,5 +1,4 @@
 # TODO - broken
-start_here/A_setup/convert_coco_to_yolo.py
 runs/*
 # Pre-trained YOLO models
 *.pt
