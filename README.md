@@ -10,7 +10,7 @@ pip install -r .\start_here\requirements.txt
 ```
 2. Run all processes in one go
 ```bash
-python .\start_here\setup\run.py
+python .\start_here\run.py
 ```
 
 
