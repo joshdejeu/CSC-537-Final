@@ -23,7 +23,7 @@ pip install -r .\start_here\requirements.txt
 ```
 2. Optional: Check if PyTorch can access the GPU (CUDA, faster than CPU)
 ```bash
-python .\start_here\setup\utils\check_gpu.py
+python .\start_here\utils\check_gpu.py
 ```
 
 3. Download the dataset
