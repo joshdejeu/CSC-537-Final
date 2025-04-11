@@ -1,34 +1,52 @@
-## Set Up
-- First, install the required packages
+# CSC 537 Final Project
+### Deep learning-based image segmentation for garbage detection
+
+## Quick Start (Recommended)
+Easiest setup, run everything in one go
+
+1. Install required packages
 ```bash
-pip install -r requirements.txt
+pip install -r .\start_here\requirements.txt
 ```
-- Optional: Check if PyTorch can access the GPU (CUDA, faster than CPU)
+2. Run all processes in one go
 ```bash
-python .\start_here\A_setup\check_gpu.py
+python .\start_here\setup\run.py
 ```
 
-### 1. Download the dataset
+
+## Manual Set Up
+If you want to manually run each step for more control
+
+1. Install required packages
 ```bash
-python .\start_here\A_setup\download_data.py
+pip install -r .\start_here\requirements.txt
 ```
-### 2. Organize images into their respective folders
+2. Optional: Check if PyTorch can access the GPU (CUDA, faster than CPU)
 ```bash
-python .\start_here\A_setup\organize_dataset.py
-```
-### 3. Convert COCO-style annotations to YOLOv8 format
-```bash
-python .\start_here\A_setup\convert_coco_to_yolo.py
+python .\start_here\setup\utils\check_gpu.py
 ```
 
-## Training
-### Optional - Resume Training (if you previously started training a model)
+3. Download the dataset
 ```bash
-python .\start_here\B_train\resume_training.py
+python .\start_here\setup\download_data.py
 ```
-### 1. Training a baseline model (50 epochs)
+4. Organize images into their respective folders
 ```bash
-python .\start_here\B_train\train_baseline.py
+python .\start_here\setup\organize_dataset.py
+```
+5. Convert COCO-style annotations to YOLOv8 format
+```bash
+python .\start_here\setup\convert_coco_to_yolo.py
+```
+
+## Manual Training
+1. Optional: Resume Training (if you previously started training a model)
+```bash
+python .\start_here\train\resume_training.py
+```
+2. Training a baseline model (50 epochs)
+```bash
+python .\start_here\train\train_baseline.py
 ```
 
 ## Confirmed Supported Python Versions
