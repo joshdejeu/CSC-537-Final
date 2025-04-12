@@ -1,58 +1,105 @@
 # CSC 537 Final Project
 ### Deep learning-based image segmentation for garbage detection
 
+## Supported Python Versions
+- Python 3.8 (Recommended)
+
+## File Structure
+```
+CSC-537-Final
+ ┣ datasets
+ ┃ ┣ COCO_annotations       # From official mju-waste github
+ ┃ ┃ ┣ test.json
+ ┃ ┃ ┣ train.json
+ ┃ ┃ ┗ val.json
+ ┃ ┣ images                 # PNG images from official mju-waste github
+ ┃ ┃ ┣ test
+ ┃ ┃ ┣ train
+ ┃ ┃ ┃ val
+ ┃ ┣ labels                 # YOLOv8 format labels (derived from COCO-style)
+ ┃ ┃ ┣ test
+ ┃ ┃ ┣ train
+ ┃ ┃ ┣ val
+ ┃ ┗ mju.yaml               # Config file for YOLOv8
+ ┣ envs                     # Containerized python version and libraries for different models
+ ┃ ┣ matterport_env
+ ┃ ┗ yolo_env
+ ┣ models                   # Contains python reqs, setup, and train files for different AI models
+ ┃ ┣ matterport
+ ┃ ┃ ┣ requirements.txt
+ ┃ ┃ ┗ run.py
+ ┃ ┗ yolo
+ ┃ ┃ ┣ requirements.txt
+ ┃ ┃ ┗ run.py
+ ┣ runs                     # All YOLO training runs will be in segment/
+ ┃ ┗ segment
+ ┣ setup                    # General setup that all models share
+ ┃ ┣ bootstrap_requirements.txt
+ ┃ ┣ check_gpu.py
+ ┃ ┣ download_data.py
+ ┃ ┣ organize_dataset.py
+ ┣ tmp                      # Temporary storage (when downloading img .zip)
+ ┣ run.py                   # Option to download data and install bootstraps
+```
+
 ## Quick Start (Recommended)
-Easiest setup, run everything in one go
-
-1. Install required packages
+1. Download dataset
 ```bash
-pip install -r .\start_here\requirements.txt
-```
-2. Run all processes in one go
-```bash
-python .\start_here\run.py
+python .\run.py
 ```
 
+## Ultralytics YOLOv8 Set Up
+1. Create virtual enviroment for model with Python 3.8 (64 bit)
+#### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
+```bash
+python.exe -m venv envs\yolo_env
+.\envs\yolo_env\Scripts\Activate.ps1
+```
+2. Double check the Python version, should say `Python 3.8.x`
+```bash
+python --version
+```
+3. Install Ultralytics requirements
+```bash
+pip install -r .\models\yolo\requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118
 
-## Manual Set Up
-If you want to manually run each step for more control
-
-1. Install required packages
-```bash
-pip install -r .\start_here\requirements.txt
 ```
-2. Optional: Check if PyTorch can access the GPU (CUDA, faster than CPU)
+4. Translate COCO-style annotations into YOLOv8 format
 ```bash
-python .\start_here\utils\check_gpu.py
+python .\models\yolo\setup\convert_coco_to_yolo.py
 ```
-
-3. Download the dataset
+5. Train your YOLO model
 ```bash
-python .\start_here\setup\download_data.py
+python .\models\yolo\train\train.py
 ```
-4. Organize images into their respective folders
+6. Option: Resume training if weights have been saved after 1 epoch
 ```bash
-python .\start_here\setup\organize_dataset.py
-```
-5. Convert COCO-style annotations to YOLOv8 format
-```bash
-python .\start_here\setup\convert_coco_to_yolo.py
-```
-
-## Manual Training
-1. Optional: Resume Training (if you previously started training a model)
-```bash
-python .\start_here\train\resume_training.py
-```
-2. Training a baseline model (50 epochs)
-```bash
-python .\start_here\train\train_baseline.py
+python .\models\yolo\train\resume_training.py
 ```
 
-## Confirmed Supported Python Versions
-- Python 3.10
-- Python 3.11.0
+
+
+
+## Matterport Set Up
+1. Create virtual enviroment for model with Python 3.8 (64 bit)
+#### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
+```bash
+python.exe -m venv envs\matterport_env
+.\envs\matterport_env\Scripts\Activate.ps1
+```
+2. Double check the Python version, should say `Python 3.8.x`
+```bash
+python --version
+```
+3. Install Matterport requirements
+```bash
+pip install -r .\models\matterport\requirements.txt
+
+```
+4. TODO
+
 
 ## Sources
 - [mju-waste Github](https://github.com/realwecan/mju-waste)
 - [MJU-Waste Dataset](https://drive.google.com/file/d/1o101UBJGeeMPpI-DSY6oh-tLk9AHXMny/view)
+- [Matterport](https://github.com/matterport/Mask_RCNN)

@@ -66,17 +66,17 @@ def main():
     # Converts all three splits (train/test/val)
     root = "datasets"
     convert_coco_to_yolo(
-        coco_json_path=f"{root}/annotations/train.json",
+        coco_json_path=f"{root}/COCO_annotations/train.json",
         annotation_name="train",
         output_label_dir=f"{root}/labels/train"
     )
     convert_coco_to_yolo(
-        coco_json_path=f"{root}/annotations/val.json",
+        coco_json_path=f"{root}/COCO_annotations/val.json",
         annotation_name="val",
         output_label_dir=f"{root}/labels/val"
     )
     convert_coco_to_yolo(
-        coco_json_path=f"{root}/annotations/test.json",
+        coco_json_path=f"{root}/COCO_annotations/test.json",
         annotation_name="test",
         output_label_dir=f"{root}/labels/test"
     )

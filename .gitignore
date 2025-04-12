@@ -12,3 +12,13 @@ tmp/*
 !datasets/images/.gitkeep
 !datasets/labels/.gitkeep
 !tmp/.gitkeep
+
+# Python Virtual Enviroment
+envs/matterport_env/*
+envs/yolo_env/*
+!envs/matterport_env/.gitkeep
+!envs/yolo_env/.gitkeep
+
+# Any cached python info
+**/__pycache__/
+*.pyc

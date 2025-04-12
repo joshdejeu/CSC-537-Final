@@ -15,7 +15,6 @@ def main():
 
     # Download with fuzzy=True to handle full Google Drive share link
     if not os.path.exists(tmp_output_zip):
-        print("Downloading dataset...")
         gdown.download(url=google_drive_url, output=tmp_output_zip, quiet=False, fuzzy=True)
 
     # Now unzip
