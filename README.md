@@ -43,7 +43,7 @@ CSC-537-Final
 ```
 
 ## Quick Start (Recommended)
-1. Download dataset
+- Download dataset
 ```bash
 python .\run.py
 ```
@@ -72,7 +72,7 @@ python .\models\yolo\setup\convert_coco_to_yolo.py
 ```bash
 python .\models\yolo\train\train.py
 ```
-6. Option: Resume training if weights have been saved after 1 epoch
+6. Optional: Resume training if weights have been saved after 1 epoch
 ```bash
 python .\models\yolo\train\resume_training.py
 ```
