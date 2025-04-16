@@ -5,6 +5,7 @@
 # TODO - Find a way to stop pretrained model files from being created at root level, maybe put them in /tmp
 
 from ultralytics import YOLO
+from pathlib import Path
 
 # Pretrained model options
 YOLO_MODELS = [

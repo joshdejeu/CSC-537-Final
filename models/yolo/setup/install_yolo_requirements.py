@@ -23,7 +23,7 @@ def is_cuda_available():
         return False
 
 def install_requirements(cuda_available):
-    subprocess.run([sys.executable, "-m", "pip", "install", "-r", "./models/yolo/requirements.txt"], check=True)
+    subprocess.run([sys.executable, "-m", "pip", "install", "-r", r".\models\yolo\requirements.txt"], check=True)
     
     if cuda_available:
         print("CUDA is available. Installing with CUDA 11.8 support...")

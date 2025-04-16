@@ -43,7 +43,7 @@ CSC-537-Final
 ```
 
 ## Quick Start (Recommended)
-- Download dataset
+- Download bootstrap requirements & image dataset (which automatically gets split into folders)
 ```bash
 python .\run.py
 ```
@@ -52,13 +52,17 @@ python .\run.py
 #### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
 ```bash
 python.exe -m venv envs\yolo_env
-.\envs\yolo_env\Scripts\Activate.ps1
+.\envs\yolo_env\Scripts\activate
 ```
 2. Double check the Python version, should say `Python 3.8.x`
 ```bash
 python --version
 ```
-3. Install Ultralytics requirements (auto-detects GPU support)
+### ⚠️ Upgrade pip, setuptools, and wheel before installing requirements to avoid PEP 517 build errors
+```bash
+python -m pip install --upgrade pip setuptools wheel
+```
+3. Install Ultralytics requirements in venv (auto-detects GPU support)
 ```bash
 python .\models\yolo\setup\install_yolo_requirements.py
 ```

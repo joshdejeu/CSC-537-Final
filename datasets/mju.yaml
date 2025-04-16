@@ -1,4 +1,4 @@
-path: .
+path: ../CSC-537-Final/datasets
 
 train: images/train
 val: images/val

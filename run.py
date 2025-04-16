@@ -1,17 +1,21 @@
 # ===========================
-# Downloads / Organizes imags & annotations
-# Choose model to train
+# Downloads / Organizes MJU-waste imgs & annotations
 # ===========================
 
-from setup import download_data, organize_dataset, check_gpu
+import subprocess
+import sys
 
 def bootstrap():
     try:
         import gdown
-        import tqdm
+        import tqdm # For progress bars
     except ImportError:
         print("Installing bootstrap requirements...")
-        subprocess.run([sys.executable, "-m", "pip", "install", "-r", "setup/bootstrap_requirements.txt"])
+        subprocess.run([sys.executable, "-m", "pip", "install", "-r", r".\setup\bootstrap_requirements.txt"])
+
+bootstrap() # Required libraries
+
+from setup import download_data, organize_dataset
 
 def promptDownload():
     response = input("Download dataset? [y/N]: ").strip().lower()
@@ -23,9 +27,7 @@ def promptDownload():
         organize_dataset.main()
 
 def main():
-    bootstrap() # Required libraries
     promptDownload() # If user wants to download data again
-    check_gpu.main() # Output GPU details
 
 if __name__ == "__main__":
     main()
