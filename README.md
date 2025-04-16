@@ -47,7 +47,6 @@ CSC-537-Final
 ```bash
 python .\run.py
 ```
-
 ## Ultralytics YOLOv8 Set Up
 1. Create virtual enviroment for model with Python 3.8 (64 bit)
 #### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
@@ -59,10 +58,9 @@ python.exe -m venv envs\yolo_env
 ```bash
 python --version
 ```
-3. Install Ultralytics requirements
+3. Install Ultralytics requirements (auto-detects GPU support)
 ```bash
-pip install -r .\models\yolo\requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118
-
+python .\models\yolo\setup\install_yolo_requirements.py
 ```
 4. Translate COCO-style annotations into YOLOv8 format
 ```bash
