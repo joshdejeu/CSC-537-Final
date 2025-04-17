@@ -42,12 +42,17 @@ CSC-537-Final
  ┣ run.py                   # Option to download data and install bootstraps
 ```
 
-## Quick Start (Recommended)
+<br>
+
+# Start Here
 - Download bootstrap requirements & image dataset (which automatically gets split into folders)
 ```bash
 python .\run.py
 ```
-## Ultralytics YOLOv8 Set Up
+
+<br>
+
+# Ultralytics YOLOv8 Set Up
 1. Create virtual enviroment for model with Python 3.8 (64 bit)
 #### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
 ```bash
@@ -79,29 +84,39 @@ python .\models\yolo\train\train.py
 python .\models\yolo\train\resume_training.py
 ```
 
+<br>
 
 
-
-## Matterport Set Up
+# Matterport Set Up
 1. Create virtual enviroment for model with Python 3.8 (64 bit)
 #### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
 ```bash
 python.exe -m venv envs\matterport_env
-.\envs\matterport_env\Scripts\Activate.ps1
+.\envs\matterport_env\Scripts\activate
 ```
 2. Double check the Python version, should say `Python 3.8.x`
 ```bash
 python --version
 ```
+### ⚠️ Upgrade pip, setuptools, and wheel before installing requirements to avoid PEP 517 build errors
+```bash
+python -m pip install --upgrade pip setuptools wheel
+```
 3. Install Matterport requirements
 ```bash
 pip install -r .\models\matterport\requirements.txt
-
 ```
 4. TODO
 
+<br>
+
+## Authors
+- Josh Dejeu
+- Aniya Watson
+- Abhinav Medarametla
 
 ## Sources
 - [mju-waste Github](https://github.com/realwecan/mju-waste)
 - [MJU-Waste Dataset](https://drive.google.com/file/d/1o101UBJGeeMPpI-DSY6oh-tLk9AHXMny/view)
+- [Ultralytics](https://github.com/ultralytics/ultralytics/blob/main/docs/en/models/yolov8.md)
 - [Matterport](https://github.com/matterport/Mask_RCNN)

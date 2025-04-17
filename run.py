@@ -23,7 +23,7 @@ def promptDownload():
         # Download imgs from Google Drive
         download_data.main()
 
-        # Split dataset into (train, test, val)
+        # Organize the dataset into 'images' and 'mask' folders; with 'train', 'test', and 'val' subfolders
         organize_dataset.main()
 
 def main():

@@ -1,3 +1,8 @@
-gdown==5.2.0
-torch==2.6.0+cu118
-ultralytics==8.3.61
+# models/matterport/requirements.txt
+tensorflow==2.10.0        # TF2.10 is compatible with Matterport code (slightly older)
+scikit-image
+imgaug
+numpy
+matplotlib
+pycocotools
+opencv-python-headless
