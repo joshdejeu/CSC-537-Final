@@ -1,7 +1,11 @@
-# TODO - broken
+# Training runs and logs
 runs/*
+logs/*
+
 # Pre-trained YOLO models
 *.pt
+# Pre-trained Matterport Mask R-CNN models
+*.h5
 
 # Has over 1GB of image data (GitHub limit 100MB per file)
 datasets/images/*

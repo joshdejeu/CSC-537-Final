@@ -72,7 +72,9 @@ python .\models\yolo\train\resume_training.py
 <br>
 
 
-# Matterport Set Up
+
+# Matterport Mask R-CNN Set Up
+**Note:** Use [Python 3.6.8](https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe) (3.6 has outdated SSL root certs)
 1. Create virtual enviroment for model with Python 3.8 (64 bit)
 #### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
 ```bash
@@ -92,7 +94,15 @@ python -m pip install --upgrade pip setuptools wheel
 ```bash
 pip install -r .\models\matterport\requirements.txt
 ```
-4. TODO
+4. TODO: Traing the model
+```bash
+python .\models\matterport\train\train.py
+```
+5. Visualize log file
+```bash
+tensorboard --logdir logs
+```
+6. Then go to `http://localhost:6006/`
 
 <br>
 
