@@ -1,5 +1,5 @@
 # CSC 537 Final Project
-### Deep learning-based image segmentation for garbage detection
+#### Deep learning-based image segmentation for garbage detection
 
 ## Supported Python Versions
 - Python 3.8.x (YOLOv8)
@@ -37,7 +37,7 @@ python .\download.py
 
 <br>
 
-# Ultralytics YOLOv8 Set Up
+# Ultralytics YOLOv8
 1. Create virtual enviroment for model with Python 3.8 (64 bit)
 #### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
 ```bash
@@ -45,7 +45,7 @@ python.exe -m venv envs\yolo_env
 .\envs\yolo_env\Scripts\activate
 ```
 **Note:** To leave venv, type `deactivate` in the terminal
-2. Double check the Python version, should say `Python 3.8.x`
+2. Double check the Python version, should say `Python 3.6.8`
 ```bash
 python --version
 ```
@@ -74,7 +74,7 @@ python .\models\yolo\train\resume_training.py
 
 
 
-# Matterport Mask R-CNN Set Up
+# Matterport Mask R-CNN
 **Note:** Use [Python 3.6.8](https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe) (3.6 has outdated SSL root certs)
 1. Create virtual enviroment for model with Python 3.8 (64 bit)
 #### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
