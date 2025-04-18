@@ -4,44 +4,26 @@
 ## Supported Python Versions
 - Python 3.8 (Recommended)
 
-## File Structure
+## Folder Structure
 ```
 CSC-537-Final
- ┣ datasets
- ┃ ┣ COCO_annotations       # From official mju-waste github
- ┃ ┃ ┣ test.json
- ┃ ┃ ┣ train.json
- ┃ ┃ ┗ val.json
- ┃ ┣ images                 # PNG images from official mju-waste github
- ┃ ┃ ┣ test
- ┃ ┃ ┣ train
- ┃ ┃ ┃ val
- ┃ ┣ labels                 # YOLOv8 format labels (derived from COCO-style)
- ┃ ┃ ┣ test
- ┃ ┃ ┣ train
- ┃ ┃ ┣ val
- ┃ ┣ masks                  # PNG images of pre-generated masks form official mju-waste github
- ┃ ┃ ┣ test
- ┃ ┃ ┣ train
- ┃ ┃ ┣ val
+ ┣ datasets                 # Contains dataset files and configurations
+ ┃ ┣ COCO_annotations       # COCO-style annotations (train, val, test) from official MJU-waste github
+ ┃ ┣ images                 # Original PNG images (train, val, test)
+ ┃ ┣ labels                 # YOLOv8 format labels derived from COCO annotations
+ ┃ ┣ masks                  # Pre-generated segmentation masks (train, val, test)
  ┃ ┗ mju.yaml               # Config file for YOLOv8
- ┣ envs                     # Containerized python version and libraries for different models
+ ┣ envs                     # Virtual environments for different models
  ┃ ┣ matterport_env
  ┃ ┗ yolo_env
- ┣ models                   # Contains python reqs, setup, and train files for different AI models
+ ┣ models                   # Model-specific setup and training scripts
  ┃ ┣ matterport
- ┃ ┃ ┣ requirements.txt
  ┃ ┗ yolo
- ┃ ┃ ┣ requirements.txt
  ┣ runs                     # All YOLO training runs will be in segment/
  ┃ ┗ segment
  ┣ setup                    # General setup that all models share
- ┃ ┣ bootstrap_requirements.txt
- ┃ ┣ check_gpu.py
- ┃ ┣ download_data.py
- ┃ ┣ organize_dataset.py
  ┣ tmp                      # Temporary storage (when downloading img .zip)
- ┣ run.py                   # Option to download data and install bootstraps
+ ┗ download.py              # Download and organize data, install bootstrap requirements
 ```
 
 <br>
