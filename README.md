@@ -2,7 +2,8 @@
 ### Deep learning-based image segmentation for garbage detection
 
 ## Supported Python Versions
-- Python 3.8 (Recommended)
+- Python 3.8.x (YOLOv8)
+- Python 3.6.8 (Matterport)
 
 ## Folder Structure
 ```
