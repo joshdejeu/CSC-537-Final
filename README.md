@@ -75,9 +75,9 @@ python .\models\yolo\train\resume_training.py
 
 
 # Matterport Mask R-CNN
-**Note:** Use [Python 3.6.8](https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe) (3.6 has outdated SSL root certs)
-1. Create virtual enviroment for model with Python 3.8 (64 bit)
-#### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
+**Note:** Use [Python 3.6.8](https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe) (3.6.0 has outdated SSL root certs)
+1. Create virtual enviroment for model with Python 3.6.8 (64 bit)
+#### What is `python.exe`? If Python 3.6.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
 ```bash
 python.exe -m venv envs\matterport_env
 .\envs\matterport_env\Scripts\activate
