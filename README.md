@@ -44,10 +44,10 @@ CSC-537-Final
 
 <br>
 
-# Start Here
+# Download dataset
 - Download bootstrap requirements & image dataset (which automatically gets split into folders)
 ```bash
-python .\run.py
+python .\download.py
 ```
 
 <br>
@@ -59,6 +59,7 @@ python .\run.py
 python.exe -m venv envs\yolo_env
 .\envs\yolo_env\Scripts\activate
 ```
+**Note:** To leave venv, type `deactivate` in the terminal
 2. Double check the Python version, should say `Python 3.8.x`
 ```bash
 python --version
@@ -94,6 +95,7 @@ python .\models\yolo\train\resume_training.py
 python.exe -m venv envs\matterport_env
 .\envs\matterport_env\Scripts\activate
 ```
+**Note:** To leave venv, type `deactivate` in the terminal
 2. Double check the Python version, should say `Python 3.8.x`
 ```bash
 python --version
