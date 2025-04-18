@@ -20,6 +20,10 @@ CSC-537-Final
  ┃ ┃ ┣ test
  ┃ ┃ ┣ train
  ┃ ┃ ┣ val
+ ┃ ┣ masks                  # PNG images of pre-generated masks form official mju-waste github
+ ┃ ┃ ┣ test
+ ┃ ┃ ┣ train
+ ┃ ┃ ┣ val
  ┃ ┗ mju.yaml               # Config file for YOLOv8
  ┣ envs                     # Containerized python version and libraries for different models
  ┃ ┣ matterport_env
@@ -27,10 +31,8 @@ CSC-537-Final
  ┣ models                   # Contains python reqs, setup, and train files for different AI models
  ┃ ┣ matterport
  ┃ ┃ ┣ requirements.txt
- ┃ ┃ ┗ run.py
  ┃ ┗ yolo
  ┃ ┃ ┣ requirements.txt
- ┃ ┃ ┗ run.py
  ┣ runs                     # All YOLO training runs will be in segment/
  ┃ ┗ segment
  ┣ setup                    # General setup that all models share
