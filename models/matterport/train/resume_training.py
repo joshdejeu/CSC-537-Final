@@ -105,9 +105,14 @@ else:
     mode = 0  # Default or "heads" or anything else
     try:
         head_epochs = int(input("Epochs for training heads [default: 50]: ") or 30)
+        all_epochs = int(input("Epochs for training all layers [default: 50]: ") or 50)
     except ValueError:
         print("[!] Invalid input. Using default (50 epochs).")
         head_epochs = 50
+        all_epochs = 50
+
+# Manually override the log_dir to the existing run folder
+model.set_log_dir(MODEL_DIR, config.NAME)
 
 # Run training based on mode
 if mode == 1:
@@ -116,7 +121,13 @@ if mode == 1:
         epochs=all_epochs,
         layers="all")
 else:
+    # Resume training heads first
     model.train(dataset_train, dataset_val,
         learning_rate=config.LEARNING_RATE,
         epochs=head_epochs,
         layers="heads")
+    # Then train all layers
+    model.train(dataset_train, dataset_val,
+        learning_rate=config.LEARNING_RATE / 10,
+        epochs=all_epochs, # Default value, can be changed
+        layers="all")
