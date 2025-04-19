@@ -19,14 +19,14 @@ def main():
 
     # Now unzip
     if os.path.exists(tmp_output_zip):
-        print("Extracting images...")
+        print("\nExtracting images...")
         with zipfile.ZipFile(tmp_output_zip, 'r') as zip_ref:
             zip_ref.extractall(output_dir) # Extract zip into 'output_dir' folder
 
         os.remove(tmp_output_zip)
-        print("Dataset downloaded and extracted.")
+        print("\nDataset downloaded and extracted.\n")
     else:
-        print("Download failed. Zip file not found.")
+        print("\nDownload failed. Zip file not found.")
 
 if __name__ == "__main__":
     main()
