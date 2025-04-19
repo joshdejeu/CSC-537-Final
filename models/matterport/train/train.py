@@ -32,6 +32,7 @@ if not os.path.exists(COCO_MODEL_PATH):
 # Load configuration
 config = GarbageDetectionConfig()
 
+print("\n")
 config.NAME = input("Name for run: ") # Set folder name
 
 # Create model
@@ -50,14 +51,23 @@ dataset_val = GarbageDataset()
 dataset_val.load_garbage(DATASET_DIR, "val")
 dataset_val.prepare()
 
+# Dynamically choose epochs for training heads and all layers
+try:
+    head_epochs = int(input("Epochs for training heads [default 50]: ") or 50)
+    all_epochs = int(input("Epochs for training all layers [default 50]: ") or 50)
+except ValueError:
+    print("[!] Invalid input. Using defaults (50 for heads, 50 for all).")
+    head_epochs = 50
+    all_epochs = 50
+
 # Train heads first
 model.train(dataset_train, dataset_val,
     learning_rate=config.LEARNING_RATE,
-    epochs=30,
+    epochs=head_epochs,
     layers='heads') # Only train on top layers of network
 
 # Fine-tune entire model
 model.train(dataset_train, dataset_val,
     learning_rate=config.LEARNING_RATE / 10,
-    epochs=50,
+    epochs=all_epochs,
     layers="all") # Trains entire model including ResNet + all heads
