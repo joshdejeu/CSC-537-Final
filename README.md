@@ -67,6 +67,10 @@ python .\models\yolo\train\train.py
 ```bash
 python .\models\yolo\train\resume_training.py
 ```
+7. Use your trained weights to predict images
+```bash
+python .\models\yolo\predict\predict.py
+```
 
 <br>
 
@@ -106,6 +110,10 @@ tensorboard --logdir logs
 7. Optional: Resume training if weights have been saved after 1 epoch
 ```bash
 python .\models\matterport\train\resume_training.py
+```
+8. Use your trained weights to predict images
+```bash
+python .\models\matterport\predict\predict.py
 ```
 
 <br>
