@@ -2,6 +2,8 @@
 
 ##### - When installing `Python 3.8` make sure to check `"Add python.exe to PATH"`
 
+##### - Then choose `Custom intallation` > `Next` and copy the `Custom install location` path for the next step
+
 ## 1. Create the Virtual Enviroment
 
 #### Open a terminal and run these commands, replace the path to python.exe if needed
@@ -46,12 +48,12 @@ python .\models\yolo\setup\convert_coco_to_yolo.py
 python .\models\yolo\train\train.py
 ```
 
-## 7. Optional: Resume training if weights have been saved after 1 epoch
+### Optional: Resume training if weights have been saved after 1 epoch
 ```bash
 python .\models\yolo\train\resume_training.py
 ```
 
-## 8. Use your trained weights to predict images
+## 7. Use your trained weights to predict images
 ```bash
 python .\models\yolo\predict\predict.py
 ```
