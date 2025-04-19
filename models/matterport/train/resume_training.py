@@ -85,9 +85,32 @@ dataset_val = GarbageDataset()
 dataset_val.load_garbage(DATASET_DIR, "val")
 dataset_val.prepare()
 
-# TODO : Make epoch count dynamic, layers dynamic
-# Resume training from the selected model
-model.train(dataset_train, dataset_val,
-    learning_rate=config.LEARNING_RATE / 10,
-    epochs=50,
-    layers="4+") # Trains entire model including ResNet + all heads
+print("")
+# Choose to train heads or all layers with dynamic epochs
+train_choice = input("Train heads or all layers? (heads/all): ").strip().lower()
+if train_choice == "all":
+    mode = 1
+    try:
+        all_epochs = int(input("Epochs for training all layers [default: 50]: ") or 50)
+    except ValueError:
+        print("[!] Invalid input. Using default (50 epochs).")
+        all_epochs = 50
+else:
+    mode = 0  # Default or "heads" or anything else
+    try:
+        head_epochs = int(input("Epochs for training heads [default: 50]: ") or 30)
+    except ValueError:
+        print("[!] Invalid input. Using default (50 epochs).")
+        head_epochs = 50
+
+# Run training based on mode
+if mode == 1:
+    model.train(dataset_train, dataset_val,
+        learning_rate=config.LEARNING_RATE / 10,
+        epochs=all_epochs,
+        layers="all")
+else:
+    model.train(dataset_train, dataset_val,
+        learning_rate=config.LEARNING_RATE,
+        epochs=head_epochs,
+        layers="heads")

@@ -32,7 +32,7 @@ if not os.path.exists(COCO_MODEL_PATH):
 # Load configuration
 config = GarbageDetectionConfig()
 
-print("\n")
+print("")
 config.NAME = input("Name for run: ") # Set folder name
 
 # Create model
@@ -50,6 +50,8 @@ dataset_train.prepare()
 dataset_val = GarbageDataset()
 dataset_val.load_garbage(DATASET_DIR, "val")
 dataset_val.prepare()
+
+print("")
 
 # Dynamically choose epochs for training heads and all layers
 try:
