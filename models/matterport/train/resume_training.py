@@ -55,6 +55,8 @@ else:
     run_path = os.path.join(MODEL_DIR, selected_run)
     print(f"Selected training run: {selected_run}")
 
+    config.NAME = selected_run # Makes sure resumed training outputs to same previous folder
+
     # TODO : Make this dynamic, find the best run (lowest loss) and resume from that
     # List all the saved weights in that specific run
     weights = sorted([f for f in os.listdir(run_path) if f.endswith(".h5")]) # List all .h5 files
