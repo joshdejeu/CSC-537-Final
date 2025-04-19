@@ -1,5 +1,7 @@
 
-#### **Note:** YOLO requires **[Python 3.6.8](https://www.python.org/downloads/release/python-368/)**, avoid Python 3.6.0 since it has outdated SSL root certs
+#### **Note:** Matterport requires **[Python 3.6.8](https://www.python.org/downloads/release/python-368/)**, avoid Python 3.6.0 since it has outdated SSL root certs
+
+##### - When installing `Python 3.6.8` make sure to check `"Add python.exe to PATH"`
 
 ## 1. Create the Virtual Enviroment
 

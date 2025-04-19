@@ -1,5 +1,7 @@
 #### **Note:** YOLO requires **[Python 3.8](https://www.python.org/downloads/release/python-380/)**
 
+##### - When installing `Python 3.8` make sure to check `"Add python.exe to PATH"`
+
 ## 1. Create the Virtual Enviroment
 
 #### Open a terminal and run these commands, replace the path to python.exe if needed
