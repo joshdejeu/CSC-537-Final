@@ -1,7 +1,7 @@
 
 #### **Note:** YOLO requires **[Python 3.6.8](https://www.python.org/downloads/release/python-368/)**, avoid Python 3.6.0 since it has outdated SSL root certs
 
-1. Create the Virtual Enviroment
+## 1. Create the Virtual Enviroment
 
 #### Open a terminal and run these commands, replace the path to python.exe if needed
 
@@ -14,13 +14,13 @@ python -m venv envs\matterport_env
 "C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe" -m venv envs\matterport_env
 ```
 
-2. Activate the `Python 3.6.8` enviroment
+## 2. Activate the `Python 3.6.8` enviroment
 ```bash
 .\envs\matterport_env\Scripts\activate
 ```
 **Note:** To leave venv, type `deactivate` in the terminal
 
-3. Verify that you're using `Python 3.6.8`
+## 3. Verify that you're using `Python 3.6.8`
 ```bash
 python --version
 ```
@@ -29,25 +29,25 @@ python --version
 ```bash
 python -m pip install --upgrade pip setuptools wheel
 ```
-4. Install Matterport requirements
+## 4. Install Matterport requirements
 ```bash
 pip install -r .\models\matterport\requirements.txt
 ```
-5. Traing the model (CPU default if no GPU present)
+## 5. Traing the model (CPU default if no GPU present)
 ```bash
 python .\models\matterport\train\train.py
 ```
-6. Visualize log file
+## 6. Visualize log file
 ```bash
 tensorboard --logdir logs
 ```
-7. Then go to `http://localhost:6006/`
+## 7. Then go to `http://localhost:6006/`
 
-8. Optional: Resume training if weights have been saved after 1 epoch
+## 8. Optional: Resume training if weights have been saved after 1 epoch
 ```bash
 python .\models\matterport\train\resume_training.py
 ```
-9. Use your trained weights to predict images
+## 9. Use your trained weights to predict images
 ```bash
 python .\models\matterport\predict\predict.py
 ```

@@ -1,6 +1,6 @@
 #### **Note:** YOLO requires **[Python 3.8](https://www.python.org/downloads/release/python-380/)**
 
-1. Create the Virtual Enviroment
+## 1. Create the Virtual Enviroment
 
 #### Open a terminal and run these commands, replace the path to python.exe if needed
 
@@ -13,13 +13,13 @@ python -m venv envs\yolo_env
 "C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe" -m venv envs\yolo_env
 ```
 
-2. Activate the `Python 3.8` enviroment
+## 2. Activate the `Python 3.8` enviroment
 ```bash
 .\envs\yolo_env\Scripts\activate
 ```
 **Note:** To leave venv, type `deactivate` in the terminal
 
-3. Verify that you're using `Python 3.8`
+## 3. Verify that you're using `Python 3.8`
 ```bash
 python --version
 ```
@@ -29,27 +29,27 @@ python --version
 python -m pip install --upgrade pip setuptools wheel
 ```
 
-4. Install Ultralytics requirements in venv (auto-detects GPU support)
+## 4. Install Ultralytics requirements in venv (auto-detects GPU support)
 ```bash
 python .\models\yolo\setup\install_yolo_requirements.py
 ```
 
-5. Translate COCO-style annotations into YOLOv8 format
+## 5. Translate COCO-style annotations into YOLOv8 format
 ```bash
 python .\models\yolo\setup\convert_coco_to_yolo.py
 ```
 
-6. Train your YOLO model
+## 6. Train your YOLO model
 ```bash
 python .\models\yolo\train\train.py
 ```
 
-7. Optional: Resume training if weights have been saved after 1 epoch
+## 7. Optional: Resume training if weights have been saved after 1 epoch
 ```bash
 python .\models\yolo\train\resume_training.py
 ```
 
-8. Use your trained weights to predict images
+## 8. Use your trained weights to predict images
 ```bash
 python .\models\yolo\predict\predict.py
 ```
