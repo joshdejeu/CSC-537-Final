@@ -93,7 +93,7 @@ python -m pip install --upgrade pip setuptools wheel
 ```bash
 pip install -r .\models\matterport\requirements.txt
 ```
-4. TODO: Traing the model
+4. Traing the model (CPU default if no GPU present)
 ```bash
 python .\models\matterport\train\train.py
 ```

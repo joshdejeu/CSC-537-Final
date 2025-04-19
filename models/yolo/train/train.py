@@ -2,8 +2,8 @@
 # Trains the baseline model (to compare later)
 # ============================
 
-# TODO - Find a way to stop pretrained model files from being created at root level, maybe put them in /tmp
-
+import os
+import shutil
 from ultralytics import YOLO
 from pathlib import Path
 
@@ -15,6 +15,18 @@ YOLO_MODELS = [
     "yolov8l-seg.pt",  # [3] Large
     "yolov8x-seg.pt"   # [4] X-Large
 ]
+
+ROOT_DIR = os.getcwd()
+PRETRAINED_DIR = os.path.join(ROOT_DIR, "models","yolo", "pt_weights")
+os.makedirs(PRETRAINED_DIR, exist_ok=True)
+
+def move_to_weights_dir(filename):
+    src = os.path.join(ROOT_DIR, filename)
+    dst = os.path.join(PRETRAINED_DIR, filename)
+    if os.path.exists(src) and not os.path.exists(dst):
+        shutil.move(src, dst)
+    return dst
+
 
 def main():
     print("Available pretrained YOLOv8 segmentation models:")
@@ -30,7 +42,6 @@ def main():
         selected = "1"  # default
 
     weights = YOLO_MODELS[int(selected)]
-
     # Run name
     name = input("Enter run name [baseline_mju]: ").strip() or "baseline_mju"
 
@@ -48,8 +59,11 @@ def main():
 
     print(f"\nTraining with: {weights} | img size: {imgsz} | epochs: {epochs} | run name: {name}")
 
-    # Load and train
-    model = YOLO(weights)
+    # Move pretrained weights out of root directory
+    weights_path = move_to_weights_dir(weights)
+
+    # Train model using relocated weight path
+    model = YOLO(weights_path)
     model.train(
         data="datasets/mju.yaml",
         project="output/yolo", # Output directory
@@ -60,3 +74,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

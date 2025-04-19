@@ -1,9 +1,0 @@
-# models/matterport/requirements.txt
-tensorflow==2.4.1
-scikit-image
-imgaug
-numpy
-matplotlib
-pycocotools
-opencv-python-headless
-# git+https://github.com/matterport/Mask_RCNN.git

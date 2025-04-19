@@ -4,10 +4,23 @@
 # =====================
 
 import os
+import shutil
 from ultralytics import YOLO
+
+ROOT_DIR = os.getcwd()
+PRETRAINED_DIR = os.path.join(ROOT_DIR, "models", "yolo", "pt_weights")
+os.makedirs(PRETRAINED_DIR, exist_ok=True)
 
 # Base directory for all training runs
 base_dir = "output/yolo/"
+
+# Moves downloaded pretrained weights to a permanent directory
+def move_to_weights_dir(filename):
+    src = os.path.join(ROOT_DIR, filename)
+    dst = os.path.join(PRETRAINED_DIR, filename)
+    if os.path.exists(src) and not os.path.exists(dst):
+        shutil.move(src, dst)
+    return dst
 
 def main():
     # List all subdirectories in the base directory (each representing a different training run)
@@ -16,7 +29,8 @@ def main():
     # Display the available training runs
     if not runs:
         print("No previous training runs found. Starting fresh...")
-        model = YOLO("yolov8s-seg.pt")  # Use initial pretrained model
+        weights_path = move_to_weights_dir("yolov8s-seg.pt")
+        model = YOLO(weights_path) # Use small pretrained model
     else:
         print("Available training runs:")
         for idx, run in enumerate(runs):
@@ -28,7 +42,8 @@ def main():
         # Ensure valid run choice
         if run_choice < 0 or run_choice >= len(runs):
             print("Invalid choice, starting fresh...")
-            model = YOLO("yolov8s-seg.pt")  # Default pretrained model
+            weights_path = move_to_weights_dir("yolov8s-seg.pt")
+            model = YOLO(weights_path) # Use small pretrained model
         else:
             # Get the selected run's directory
             selected_run = runs[run_choice]
@@ -40,7 +55,8 @@ def main():
 
             if not saved_weights:
                 print("No saved weights found in this run. Starting fresh...")
-                model = YOLO("yolov8s-seg.pt")  # Default pretrained model
+                weights_path = move_to_weights_dir("yolov8s-seg.pt")
+                model = YOLO(weights_path) # Use small pretrained model
             else:
                 # Display saved weights and ask user to choose which checkpoint to resume from
                 print("Saved model weights found:")

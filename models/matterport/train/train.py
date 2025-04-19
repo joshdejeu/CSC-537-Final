@@ -20,7 +20,9 @@ from setup.dataset_class import GarbageDataset
 ROOT_DIR = os.getcwd()
 MODEL_DIR = os.path.join(ROOT_DIR, "output/mrcnn")
 DATASET_DIR = os.path.join(ROOT_DIR, "datasets")
-COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
+PRETRAINED_DIR = os.path.join(ROOT_DIR, "models","matterport", "pt_weights")
+os.makedirs(PRETRAINED_DIR, exist_ok=True)
+COCO_MODEL_PATH = os.path.join(PRETRAINED_DIR, "mask_rcnn_coco.h5")
 
 # Download COCO weights if not present
 if not os.path.exists(COCO_MODEL_PATH):
