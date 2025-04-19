@@ -60,6 +60,7 @@ def main():
     # Train the model (if needed, this will pick up from the selected model and continue training)
     model.train(
         data="datasets/mju.yaml",
+        project="output/yolo", # Output directory
         epochs=50,
         imgsz=640,  # Adjust if needed
         name="baseline_mju",  # Save to the same folder (or change if you want a new name)
