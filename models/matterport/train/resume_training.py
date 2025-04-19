@@ -77,7 +77,7 @@ else:
         print("Invalid choice")
         exit(1)
     else:
-        config.NAME = selected_run.split("_")[0]  # Strip timestamp so it doesn’t double-append
+        config.NAME = selected_run  # Use full folder name including timestamp
         model = modellib.MaskRCNN(mode="training", config=config, model_dir=MODEL_DIR) # Resume from chosen model
         model.set_log_dir = lambda x=None: None
         model.model_dir = os.path.join(MODEL_DIR, selected_run) # Force override
