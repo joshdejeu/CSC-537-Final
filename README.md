@@ -12,16 +12,14 @@ CSC-537-Final
  ┃ ┣ COCO_annotations       # COCO-style annotations (train, val, test) from official MJU-waste github
  ┃ ┣ images                 # Original PNG images (train, val, test)
  ┃ ┣ labels                 # YOLOv8 format labels derived from COCO annotations
- ┃ ┣ masks                  # Pre-generated segmentation masks (train, val, test)
- ┃ ┗ mju.yaml               # Config file for YOLOv8
+ ┃ ┗ masks                  # Pre-generated segmentation masks (train, val, test)
  ┣ envs                     # Virtual environments for different models
  ┃ ┣ matterport_env
  ┃ ┗ yolo_env
  ┣ models                   # Model-specific setup and training scripts
  ┃ ┣ matterport
  ┃ ┗ yolo
- ┣ runs                     # All YOLO training runs will be in segment/
- ┃ ┗ segment
+ ┣ output                     # All YOLO/Matterport training runs saved here
  ┣ setup                    # General setup that all models share
  ┣ tmp                      # Temporary storage (when downloading img .zip)
  ┗ download.py              # Download and organize data, install bootstrap requirements
@@ -104,6 +102,11 @@ python .\models\matterport\train\train.py
 tensorboard --logdir logs
 ```
 6. Then go to `http://localhost:6006/`
+
+7. Optional: Resume training if weights have been saved after 1 epoch
+```bash
+python .\models\matterport\train\resume_training.py
+```
 
 <br>
 

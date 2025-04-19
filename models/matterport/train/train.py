@@ -18,7 +18,7 @@ from setup.dataset_class import GarbageDataset
 
 # Paths
 ROOT_DIR = os.getcwd()
-MODEL_DIR = os.path.join(ROOT_DIR, "logs")
+MODEL_DIR = os.path.join(ROOT_DIR, "output/mrcnn")
 DATASET_DIR = os.path.join(ROOT_DIR, "datasets")
 COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
 
@@ -29,6 +29,8 @@ if not os.path.exists(COCO_MODEL_PATH):
 
 # Load configuration
 config = GarbageDetectionConfig()
+
+config.NAME = input("Name for run: ")
 
 # Create model
 model = modellib.MaskRCNN(mode="training", config=config, model_dir=MODEL_DIR)

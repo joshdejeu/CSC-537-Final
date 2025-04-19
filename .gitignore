@@ -1,6 +1,6 @@
 # Training runs and logs
-runs/*
-logs/*
+output/yolo/*
+output/mrcnn/*
 
 # Pre-trained YOLO models
 *.pt
@@ -17,6 +17,8 @@ tmp/*
 !datasets/images/.gitkeep
 !datasets/masks/.gitkeep
 !datasets/labels/.gitkeep
+!output/yolo/.gitkeep
+!output/mrcnn/.gitkeep
 !tmp/.gitkeep
 
 # Python Virtual Enviroment

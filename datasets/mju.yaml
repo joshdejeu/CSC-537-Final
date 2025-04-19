@@ -1,4 +1,5 @@
-path: ../CSC-537-Final/datasets
+# Config file for YOLOv8
+path: .
 
 train: images/train
 val: images/val

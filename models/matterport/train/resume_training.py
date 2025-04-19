@@ -24,7 +24,7 @@ from setup.dataset_class import GarbageDataset
 # Config and directories
 config = GarbageDetectionConfig()
 ROOT_DIR = os.getcwd()
-MODEL_DIR = os.path.join(ROOT_DIR, "logs")
+MODEL_DIR = os.path.join(ROOT_DIR, "output/mrcnn")
 DATASET_DIR = os.path.join(ROOT_DIR, "datasets")
 
 # List all subdirectories in the base directory (each representing a different training run)

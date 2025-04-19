@@ -52,6 +52,7 @@ def main():
     model = YOLO(weights)
     model.train(
         data="datasets/mju.yaml",
+        project="output/yolo", # Output directory
         epochs=epochs,
         imgsz=imgsz, # Must be a multiple of 32
         name=name
