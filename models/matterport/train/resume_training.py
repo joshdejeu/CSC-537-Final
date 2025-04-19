@@ -79,7 +79,7 @@ else:
         print("Invalid choice")
         exit(1)
     else:
-        model = modellib.MaskRCNN(mode="training", config=config, model_dir=MODEL_DIR) # Resume from chosen model
+        model = modellib.MaskRCNN(mode="training", config=config, model_dir=run_path) # Resume from chosen model
         model.load_weights(weight_path, by_name=True)
 
 # Prepare datasets
@@ -111,9 +111,6 @@ else:
         head_epochs = 50
         all_epochs = 50
 
-# Manually override the log_dir to the existing run folder
-run_path = os.path.join(MODEL_DIR, selected_run)
-model.set_log_dir(run_path)
 
 # Extract epoch number
 import re
