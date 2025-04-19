@@ -33,10 +33,14 @@ if not os.path.exists(COCO_MODEL_PATH):
 config = GarbageDetectionConfig()
 
 print("")
-config.NAME = input("Name for run: ") # Set folder name
 
+# Set folder name
+run_name = input("Name for run: ").strip()
 # Create model
 model = modellib.MaskRCNN(mode="training", config=config, model_dir=MODEL_DIR)
+if not run_name.endswith("_"):
+    run_name += "_"
+config.NAME = run_name
 
 # Load weights
 model.load_weights(COCO_MODEL_PATH, by_name=True, exclude=[
