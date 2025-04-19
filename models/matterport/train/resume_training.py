@@ -115,20 +115,28 @@ else:
 run_path = os.path.join(MODEL_DIR, selected_run)
 model.set_log_dir(run_path)
 
+# Extract epoch number
+import re
+match = re.search(r"_(\d{4})\.h5", weights[weight_choice])
+initial_epoch = int(match.group(1)) if match else 0
+
 # Run training based on mode
 if mode == 1:
     model.train(dataset_train, dataset_val,
         learning_rate=config.LEARNING_RATE / 10,
         epochs=all_epochs,
-        layers="all")
+        layers="all",
+        initial_epoch=initial_epoch)
 else:
     # Resume training heads first
     model.train(dataset_train, dataset_val,
         learning_rate=config.LEARNING_RATE,
         epochs=head_epochs,
-        layers="heads")
+        layers="heads",
+        initial_epoch=initial_epoch)
     # Then train all layers
     model.train(dataset_train, dataset_val,
         learning_rate=config.LEARNING_RATE / 10,
         epochs=all_epochs, # Default value, can be changed
-        layers="all")
+        layers="all",
+        initial_epoch=head_epochs)
