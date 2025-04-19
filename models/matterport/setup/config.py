@@ -1,5 +1,6 @@
 from mrcnn.config import Config
 
+# TODO: Make these options dynamic for every training run
 class GarbageDetectionConfig(Config):
     NAME = "run_"
     GPU_COUNT = 1
@@ -11,3 +12,13 @@ class GarbageDetectionConfig(Config):
     # Optional for smaller GPUs
     IMAGE_MIN_DIM = 512
     IMAGE_MAX_DIM = 512
+
+    # Reduces memory usage
+    TRAIN_ROIS_PER_IMAGE = 64       # Default is 200
+    MAX_GT_INSTANCES = 50            # Default is 100 Number of objects per image
+    DETECTION_MAX_INSTANCES = 50     # Default is 100
+    POST_NMS_ROIS_TRAINING = 500     # Default is 2000
+    POST_NMS_ROIS_INFERENCE = 250    # Default is 1000
+
+    BACKBONE = "resnet50"  # ResNet101 default
+    # MASK_SHAPE = [14, 14]  # default is [28, 28]

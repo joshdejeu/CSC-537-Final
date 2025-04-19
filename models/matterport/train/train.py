@@ -1,10 +1,11 @@
-import os
-
 # Suppress warnings
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
+warnings.filterwarnings("ignore")
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
+import os
 import sys
 from mrcnn import model as modellib
 
@@ -45,8 +46,14 @@ dataset_val = GarbageDataset()
 dataset_val.load_garbage(DATASET_DIR, "val")
 dataset_val.prepare()
 
-# Train
+# Train heads first
 model.train(dataset_train, dataset_val,
-            learning_rate=config.LEARNING_RATE,
-            epochs=30,
-            layers='heads')
+    learning_rate=config.LEARNING_RATE,
+    epochs=30,
+    layers='heads') # Only train on top layers of network
+
+# Fine-tune entire model
+model.train(dataset_train, dataset_val,
+    learning_rate=config.LEARNING_RATE / 10,
+    epochs=50,
+    layers="all") # Trains entire model including ResNet + all heads
