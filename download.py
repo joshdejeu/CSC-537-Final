@@ -41,11 +41,12 @@ def bootstrap():
         import tqdm
 
 bootstrap() # Required libraries
+print("\nSuccessfully installed bootstrap requirements.")
 
 from setup import download_data, organize_dataset
 
 def promptDownload():
-    response = input("Download dataset? [y/N]: ").strip().lower()
+    response = input("\n\nDownload dataset? [y/N]: ").strip().lower()
     if response == "y":
         # Download imgs from Google Drive
         download_data.main()
