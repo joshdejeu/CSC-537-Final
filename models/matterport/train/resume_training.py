@@ -112,7 +112,8 @@ else:
         all_epochs = 50
 
 # Manually override the log_dir to the existing run folder
-model.set_log_dir(MODEL_DIR, config.NAME)
+run_path = os.path.join(MODEL_DIR, selected_run)
+model.set_log_dir(run_path)
 
 # Run training based on mode
 if mode == 1:
