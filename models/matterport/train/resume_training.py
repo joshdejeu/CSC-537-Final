@@ -28,7 +28,11 @@ MODEL_DIR = os.path.join(ROOT_DIR, "output/mrcnn")
 DATASET_DIR = os.path.join(ROOT_DIR, "datasets")
 
 # List all subdirectories in the base directory (each representing a different training run)
-runs = [d for d in os.listdir(MODEL_DIR) if os.path.isdir(os.path.join(MODEL_DIR, d)) and d.startswith("run_")]
+runs = [
+    d for d in os.listdir(MODEL_DIR)
+    if os.path.isdir(os.path.join(MODEL_DIR, d)) and
+       not d.startswith(".")  # Skip .gitkeep
+]
 
 # Display the available training runs
 if not runs:
