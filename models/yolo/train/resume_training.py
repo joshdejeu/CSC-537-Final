@@ -63,7 +63,8 @@ def main():
         project="output/yolo", # Output directory
         epochs=50,
         imgsz=640,  # Adjust if needed
-        name="baseline_mju",  # Save to the same folder (or change if you want a new name)
+        # TODO : get the correct folder name and continue training from there
+        name="RESUMED",  # Save to the same folder (or change if you want a new name)
         resume=True  # Automatically resume from the selected checkpoint
     )
 

@@ -30,7 +30,7 @@ if not os.path.exists(COCO_MODEL_PATH):
 # Load configuration
 config = GarbageDetectionConfig()
 
-config.NAME = input("Name for run: ")
+config.NAME = input("Name for run: ") # Set folder name
 
 # Create model
 model = modellib.MaskRCNN(mode="training", config=config, model_dir=MODEL_DIR)
