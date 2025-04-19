@@ -19,7 +19,7 @@ CSC-537-Final
  ┣ models                   # Model-specific setup and training scripts
  ┃ ┣ matterport
  ┃ ┗ yolo
- ┣ output                     # All YOLO/Matterport training runs saved here
+ ┣ output                   # All YOLO/Matterport training runs saved here
  ┣ setup                    # General setup that all models share
  ┣ tmp                      # Temporary storage (when downloading img .zip)
  ┗ download.py              # Download and organize data, install bootstrap requirements
