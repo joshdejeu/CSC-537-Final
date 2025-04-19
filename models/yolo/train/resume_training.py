@@ -7,7 +7,7 @@ import os
 from ultralytics import YOLO
 
 # Base directory for all training runs
-base_dir = "runs/segment/"
+base_dir = "output/yolo/"
 
 def main():
     # List all subdirectories in the base directory (each representing a different training run)
