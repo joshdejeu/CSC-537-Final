@@ -43,6 +43,7 @@ python.exe -m venv envs\yolo_env
 .\envs\yolo_env\Scripts\activate
 ```
 **Note:** To leave venv, type `deactivate` in the terminal
+
 2. Double check the Python version, should say `Python 3.6.8`
 ```bash
 python --version
@@ -85,6 +86,7 @@ python.exe -m venv envs\matterport_env
 .\envs\matterport_env\Scripts\activate
 ```
 **Note:** To leave venv, type `deactivate` in the terminal
+
 2. Double check the Python version, should say `Python 3.6.8`
 ```bash
 python --version
