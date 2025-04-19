@@ -63,12 +63,12 @@ else:
         exit(1)
 
     # Display saved weights and ask user to choose which checkpoint to resume from
-    print("Saved model weights found:")
+    print("\nSaved model weights found:")
     for idx, weight_file in enumerate(weights):
         print(f"{idx+1}: {weight_file}")
 
     # Ask user to choose the specific weight to resume from
-    weight_choice = int(input(f"Choose a model to resume from (1-{len(weights)}): "))
+    weight_choice = int(input(f"\nChoose a model to resume from (1-{len(weights)}): "))
     weight_choice -= 1  # Adjust for zero-based index
     weight_path = os.path.join(run_path, weights[weight_choice])
 
