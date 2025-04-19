@@ -77,13 +77,16 @@ else:
         print("Invalid choice")
         exit(1)
     else:
-        config.NAME = selected_run  # Use full folder name including timestamp
+        config.NAME = selected_run.split("_")[0]  # Use full folder name including timestamp
+
+        # Manually set the run folder
+        run_folder = os.path.join(MODEL_DIR, selected_run)
+
         model = modellib.MaskRCNN(mode="training", config=config, model_dir=MODEL_DIR) # Resume from chosen model
 
         # Force logs in the selected folder
-        model.model_dir = os.path.join(MODEL_DIR, selected_run)
-        model.log_dir = model.model_dir
-
+        model.model_dir = run_folder
+        model.log_dir = run_folder
 
         model.load_weights(weight_path, by_name=True)
 
