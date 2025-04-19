@@ -35,88 +35,13 @@ python .\download.py
 
 <br>
 
-# Ultralytics YOLOv8
-1. Create virtual enviroment for model with Python 3.8 (64 bit)
-#### What is `python.exe`? If Python 3.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
-```bash
-python.exe -m venv envs\yolo_env
-.\envs\yolo_env\Scripts\activate
-```
-**Note:** To leave venv, type `deactivate` in the terminal
-
-2. Double check the Python version, should say `Python 3.6.8`
-```bash
-python --version
-```
-### ⚠️ Upgrade pip, setuptools, and wheel before installing requirements to avoid PEP 517 build errors
-```bash
-python -m pip install --upgrade pip setuptools wheel
-```
-3. Install Ultralytics requirements in venv (auto-detects GPU support)
-```bash
-python .\models\yolo\setup\install_yolo_requirements.py
-```
-4. Translate COCO-style annotations into YOLOv8 format
-```bash
-python .\models\yolo\setup\convert_coco_to_yolo.py
-```
-5. Train your YOLO model
-```bash
-python .\models\yolo\train\train.py
-```
-6. Optional: Resume training if weights have been saved after 1 epoch
-```bash
-python .\models\yolo\train\resume_training.py
-```
-7. Use your trained weights to predict images
-```bash
-python .\models\yolo\predict\predict.py
-```
+# Ultralytics YOLOv8 Guide
+- [Ultralytics YOLOv8](models/yolo/README.md)
 
 <br>
 
-
-
-# Matterport Mask R-CNN
-**Note:** Use [Python 3.6.8](https://www.python.org/ftp/python/3.6.8/python-3.6.8-amd64.exe) (3.6.0 has outdated SSL root certs)
-1. Create virtual enviroment for model with Python 3.6.8 (64 bit)
-#### What is `python.exe`? If Python 3.6.8 is your default you can use `python` instead, else use `C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe`
-```bash
-python.exe -m venv envs\matterport_env
-.\envs\matterport_env\Scripts\activate
-```
-**Note:** To leave venv, type `deactivate` in the terminal
-
-2. Double check the Python version, should say `Python 3.6.8`
-```bash
-python --version
-```
-### ⚠️ Upgrade pip, setuptools, and wheel before installing requirements to avoid PEP 517 build errors
-```bash
-python -m pip install --upgrade pip setuptools wheel
-```
-3. Install Matterport requirements
-```bash
-pip install -r .\models\matterport\requirements.txt
-```
-4. Traing the model (CPU default if no GPU present)
-```bash
-python .\models\matterport\train\train.py
-```
-5. Visualize log file
-```bash
-tensorboard --logdir logs
-```
-6. Then go to `http://localhost:6006/`
-
-7. Optional: Resume training if weights have been saved after 1 epoch
-```bash
-python .\models\matterport\train\resume_training.py
-```
-8. Use your trained weights to predict images
-```bash
-python .\models\matterport\predict\predict.py
-```
+# Matterport Mask R-CNN Guide
+- [Matterport Mask R-CNN](models/matterport/README.md)
 
 <br>
 
