@@ -55,8 +55,6 @@ else:
     run_path = os.path.join(MODEL_DIR, selected_run)
     print(f"Selected training run: {selected_run}")
 
-    config.NAME = selected_run # Makes sure resumed training outputs to same previous folder
-
     # TODO : Make this dynamic, find the best run (lowest loss) and resume from that
     # List all the saved weights in that specific run
     weights = sorted([f for f in os.listdir(run_path) if f.endswith(".h5")]) # List all .h5 files
@@ -79,7 +77,9 @@ else:
         print("Invalid choice")
         exit(1)
     else:
-        model = modellib.MaskRCNN(mode="training", config=config, model_dir=run_path) # Resume from chosen model
+        config.NAME = selected_run # Makes sure resumed training outputs to same previous folder
+        model = modellib.MaskRCNN(mode="training", config=config, model_dir=MODEL_DIR) # Resume from chosen model
+        model.model_dir = os.path.join(MODEL_DIR, selected_run) # Force override
         model.load_weights(weight_path, by_name=True)
 
 # Prepare datasets
@@ -111,29 +111,20 @@ else:
         head_epochs = 50
         all_epochs = 50
 
-
-# Extract epoch number
-import re
-match = re.search(r"_(\d{4})\.h5", weights[weight_choice])
-initial_epoch = int(match.group(1)) if match else 0
-
 # Run training based on mode
 if mode == 1:
     model.train(dataset_train, dataset_val,
         learning_rate=config.LEARNING_RATE / 10,
         epochs=all_epochs,
-        layers="all",
-        initial_epoch=initial_epoch)
+        layers="all")
 else:
     # Resume training heads first
     model.train(dataset_train, dataset_val,
         learning_rate=config.LEARNING_RATE,
         epochs=head_epochs,
-        layers="heads",
-        initial_epoch=initial_epoch)
+        layers="heads")
     # Then train all layers
     model.train(dataset_train, dataset_val,
         learning_rate=config.LEARNING_RATE / 10,
         epochs=all_epochs, # Default value, can be changed
-        layers="all",
-        initial_epoch=head_epochs)
+        layers="all")
