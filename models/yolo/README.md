@@ -62,6 +62,7 @@ python .\models\yolo\predict\predict_custom.py
 ```bash
 python .\models\yolo\predict\predict_pretrained.py
 ```
+___
 
 ## CUDA downloads for GPU training 
 - [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)

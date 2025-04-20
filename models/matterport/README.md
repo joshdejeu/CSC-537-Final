@@ -59,6 +59,7 @@ tensorboard --logdir logs
 ```bash
 python .\models\matterport\predict\predict.py
 ```
+___
 
 ## CUDA downloads for GPU training 
 - [CUDA 10.0](https://developer.nvidia.com/cuda-10.0-download-archive)
