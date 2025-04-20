@@ -4,6 +4,9 @@ predictions/*
 # Training runs and logs
 output/yolo/*
 output/mrcnn/*
+output/predictions/mrcnn/*
+output/predictions/yolo/*
+
 
 # Pre-trained YOLO models
 *.pt
@@ -22,6 +25,8 @@ tmp/*
 !datasets/labels/.gitkeep
 !output/yolo/.gitkeep
 !output/mrcnn/.gitkeep
+!output/predictions/mrcnn/.gitkeep
+!output/predictions/yolo/.gitkeep
 !predictions/.gitkeep
 !tmp/.gitkeep
 # Image for README.md
