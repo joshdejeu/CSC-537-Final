@@ -50,7 +50,7 @@ python .\models\matterport\train\resume_training.py
 
 ## 6. Visualize training progression
 ```bash
-tensorboard --logdir logs
+tensorboard --logdir output/mrcnn
 ```
 
 ## 7. Then go to [http://localhost:6006/](http://localhost:6006/)
