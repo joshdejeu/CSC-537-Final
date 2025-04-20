@@ -1,5 +1,5 @@
 
-#### **Note:** Matterport requires **[Python 3.6.8](https://www.python.org/downloads/release/python-368/)**, avoid Python 3.6.0 since it has outdated SSL root certs
+> **Note:** Matterport requires **[Python 3.6.8](https://www.python.org/downloads/release/python-368/)**, avoid Python 3.6.0 since it has outdated SSL root certs
 
 ##### - When installing `Python 3.6.8` make sure to check `"Add python.exe to PATH"`
 ##### - Then choose `Custom intallation` > `Next` and copy the `Custom install location` path for the next step
@@ -21,7 +21,7 @@ python -m venv envs\matterport_env
 ```bash
 .\envs\matterport_env\Scripts\activate
 ```
-**Note:** To leave venv, type `deactivate` in the terminal
+> **Note:** To leave venv, type `deactivate` in the terminal
 
 ## 3. Verify that you're using `Python 3.6.8`
 ```bash
@@ -61,6 +61,6 @@ python .\models\matterport\predict\predict.py
 ```
 
 ## CUDA downloads for GPU training 
-- [CUDA 10.0](https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork)
-
+- [CUDA 10.0](https://developer.nvidia.com/cuda-10.0-download-archive)
 - [cuDNN 7.4](https://developer.nvidia.com/rdp/cudnn-archive)
+> **Note:** Make sure to extract the cuDNN files into your CUDA installation directory (usually `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0`)

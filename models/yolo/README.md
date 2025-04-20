@@ -1,4 +1,4 @@
-#### **Note:** YOLO requires **[Python 3.8](https://www.python.org/downloads/release/python-380/)**
+> **Note:** YOLO requires **[Python 3.8](https://www.python.org/downloads/release/python-380/)**
 
 ##### - When installing `Python 3.8` make sure to check `"Add python.exe to PATH"`
 
@@ -21,7 +21,7 @@ python -m venv envs\yolo_env
 ```bash
 .\envs\yolo_env\Scripts\activate
 ```
-**Note:** To leave venv, type `deactivate` in the terminal
+> **Note:** To leave venv, type `deactivate` in the terminal
 
 ## 3. Verify that you're using `Python 3.8`
 ```bash
@@ -62,3 +62,8 @@ python .\models\yolo\predict\predict_custom.py
 ```bash
 python .\models\yolo\predict\predict_pretrained.py
 ```
+
+## CUDA downloads for GPU training 
+- [CUDA 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)
+- [cuDNN 8.6](https://developer.nvidia.com/rdp/cudnn-archive#a-collapse86-118)
+> **Note:** Make sure to extract the cuDNN files into your CUDA installation directory (usually `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8`)
