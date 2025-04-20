@@ -55,5 +55,10 @@ python .\models\yolo\train\resume_training.py
 
 ## 7. Use your trained weights to predict images
 ```bash
-python .\models\yolo\predict\predict.py
+python .\models\yolo\predict\predict_custom.py
+```
+
+### Optional: Use pretrained YOLO weights to predict images
+```bash
+python .\models\yolo\predict\predict_pretrained.py
 ```
