@@ -57,7 +57,7 @@ tensorboard --logdir output/mrcnn
 
 ## 8. Use your trained weights to predict images
 ```bash
-python .\models\matterport\predict\predict.py
+python .\models\matterport\predict\predict_custom.py
 ```
 ___
 

@@ -25,8 +25,9 @@ from setup.config import GarbageDetectionConfig
 
 # Setup paths
 ROOT_DIR = os.getcwd()
-MODEL_PATH = os.path.join(ROOT_DIR, "output", "mrcnn", "baseline_50", "mask_rcnn_run__0050.h5")
+MODEL_PATH = os.path.join(ROOT_DIR, "output", "mrcnn", "real_20250420T0302", "real20250420T0302", "mask_rcnn_run__0050.h5")
 IMAGE_PATH = os.path.join(ROOT_DIR, "predictions", "juicebox.png")
+
 
 # Load config and model
 config = GarbageDetectionConfig()
