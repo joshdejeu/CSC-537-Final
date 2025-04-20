@@ -24,6 +24,8 @@ tmp/*
 !output/mrcnn/.gitkeep
 !predictions/.gitkeep
 !tmp/.gitkeep
+# Image for README.md
+!tmp/MRCNN.png
 
 # Python Virtual Enviroment
 envs/matterport_env/*

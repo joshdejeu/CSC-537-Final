@@ -1,9 +1,11 @@
-# =================================================
+# =======================================================
 # Use trained MRCNN weights to make predictions on images
-# =================================================
+# =======================================================
 
-# TODO : find the best weight from the run
-# NOTE : This is a bit of a hack, might have some problems
+# TODO : Display all runs to select from
+# TODO : Find the best weight from that run
+
+# NOTE : This is a bit of a hack, might have some problems and lots of warnings in the console
 
 import os
 import sys
@@ -24,7 +26,7 @@ from setup.config import GarbageDetectionConfig
 # Setup paths
 ROOT_DIR = os.getcwd()
 MODEL_PATH = os.path.join(ROOT_DIR, "output", "mrcnn", "baseline_50", "mask_rcnn_run__0050.h5")
-IMAGE_PATH = os.path.join(ROOT_DIR, "predictions", "bottle.jpg")
+IMAGE_PATH = os.path.join(ROOT_DIR, "predictions", "juicebox.png")
 
 # Load config and model
 config = GarbageDetectionConfig()

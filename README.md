@@ -1,5 +1,10 @@
 # CSC 537 Final Project
-#### Deep learning-based image segmentation for garbage detection
+
+<div align="center">
+    <p>Deep learning-based image segmentation for garbage detection</p>
+    <img src="./tmp/MRCNN.png" alt="Prediction Example" width="400"/>
+</div>
+
 
 ## Supported Python Versions
 - Python 3.8.x (YOLOv8)
@@ -28,7 +33,7 @@ CSC-537-Final
 <br>
 
 # Download dataset
-- Download bootstrap requirements & image dataset (which automatically gets split into folders)
+- Download bootstrap requirements & MJU-Waste dataset (which automatically gets split into folders)
 ```bash
 python .\download.py
 ```
