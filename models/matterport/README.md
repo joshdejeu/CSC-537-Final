@@ -14,7 +14,7 @@ python -m venv envs\matterport_env
 ```
 - Otherwise, use the full path to the correct Python version
 ```bash
-"C:\Users\<user>\AppData\Local\Programs\Python\Python38\python.exe" -m venv envs\matterport_env
+"C:\Users\<user>\AppData\Local\Programs\Python\Python36\python.exe" -m venv envs\matterport_env
 ```
 
 ## 2. Activate the `Python 3.6.8` enviroment

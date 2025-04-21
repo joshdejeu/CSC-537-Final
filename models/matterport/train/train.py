@@ -61,9 +61,7 @@ config.NAME = run_name
 model = modellib.MaskRCNN(mode="training", config=config, model_dir=MODEL_DIR) # Create model in training mode, makes a new dir with timestamp
 run_dir = model.log_dir  # Example: output/mrcnn/test_20250420T0302
 
-print(run_dir)
-
-# exit(1)
+print(f"Outputting weights to: {run_dir}")
 
 # Load weights
 model.load_weights(COCO_MODEL_PATH, by_name=True, exclude=["mrcnn_class_logits", "mrcnn_bbox_fc", "mrcnn_bbox", "mrcnn_mask"])
