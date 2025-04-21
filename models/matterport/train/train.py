@@ -20,6 +20,8 @@ import tensorflow as tf
 tf.get_logger().setLevel('ERROR')
 
 import sys
+import gc
+from keras import backend as K
 from mrcnn import model as modellib
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -105,12 +107,22 @@ model.train(dataset_train, dataset_val,
     layers='heads',
     custom_callbacks=callbacks) # Only train on top layers of network
 
-# NOTE : To train all layers, uncomment the following lines, run resume_training.py, or comment the above line and uncomment the below one
+# Clear session and cleanup to free up memory and prevent OOM errors
+# NOTE : This removes the model from memory, so we need to recreate it
+K.clear_session()
+gc.collect()
 
-# TODO : Make this work like resume_training.py
+# Recreate model + reload weights
+model = modellib.MaskRCNN(mode="training", config=config, model_dir=MODEL_DIR)
+model.load_weights(os.path.join(run_dir, "last.h5"), by_name=True)
+
+# Reapply forced paths
+model.log_dir = run_dir
+model.checkpoint_path = os.path.join(run_dir, f"mask_rcnn_{config.NAME.lower()}_" + "{epoch:04d}.h5")
+
 # Fine-tune entire model
-# model.train(dataset_train, dataset_val,
-#     learning_rate=config.LEARNING_RATE / 10,
-#     epochs=all_epochs,
-#     layers="all",
-#     custom_callbacks=callbacks  ) # Trains entire model including ResNet + all heads
+model.train(dataset_train, dataset_val,
+    learning_rate=config.LEARNING_RATE / 10,
+    epochs=all_epochs,
+    layers="4+",
+    custom_callbacks=callbacks  ) # Trains entire model including ResNet + all heads
