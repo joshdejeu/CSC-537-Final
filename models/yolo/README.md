@@ -48,7 +48,7 @@ python .\models\yolo\setup\convert_coco_to_yolo.py
 python .\models\yolo\train\train.py
 ```
 
-### Optional: Resume training if weights have been saved after 1 epoch
+### Optional: Resume training on a prev run (if weights have been saved after 1 epoch)
 ```bash
 python .\models\yolo\train\resume_training.py
 ```

@@ -43,7 +43,7 @@ pip install -r .\models\matterport\requirements.txt
 python .\models\matterport\train\train.py
 ```
 
-### Optional: Resume training if weights have been saved after 1 epoch
+### Optional: Resume training on a prev run (if weights have been saved after 1 epoch)
 ```bash
 python .\models\matterport\train\resume_training.py
 ```
