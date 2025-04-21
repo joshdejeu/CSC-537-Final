@@ -6,6 +6,9 @@ import os
 import shutil
 from ultralytics import YOLO
 
+# TODO : Make this dynamic for all images
+# TODO : Save images with masks and boxes to output/yolo/<run_name>/<weight_name>/<image_name>.jpg/png/webp etc
+
 # NOTE : You have to import your own images and manually change the name each time you run this script
 
 ROOT_DIR = os.getcwd()
