@@ -51,7 +51,7 @@ python .\download.py
 
 # Matterport Mask R-CNN Guide
 - [Windows Setup Guide](models/matterport/README_windows.md)
-- [Mavos/Linus Setup Guide](models/matterport/README_macos-linus.md)
+- [MacOS/Linus Setup Guide](models/matterport/README_macos-linus.md)
 
 <br>
 
