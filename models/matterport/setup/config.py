@@ -7,7 +7,7 @@ class GarbageDetectionConfig(Config):
     IMAGES_PER_GPU = 1
     NUM_CLASSES = 1 + 1  # Background + garbage
     STEPS_PER_EPOCH = 100
-    DETECTION_MIN_CONFIDENCE = 0.9
+    DETECTION_MIN_CONFIDENCE = 0.8
 
     # Optional for smaller GPUs
     IMAGE_MIN_DIM = 512

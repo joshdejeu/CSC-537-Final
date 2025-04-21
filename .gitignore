@@ -1,5 +1,5 @@
 # Images to predict with trained models
-predictions/*
+input/*
 
 # Training runs and logs
 output/yolo/*
@@ -27,7 +27,7 @@ tmp/*
 !output/mrcnn/.gitkeep
 !output/predictions/mrcnn/.gitkeep
 !output/predictions/yolo/.gitkeep
-!predictions/.gitkeep
+!input/.gitkeep
 !tmp/.gitkeep
 # Image for README.md
 !tmp/MRCNN.png

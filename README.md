@@ -24,7 +24,9 @@ CSC-537-Final
  ┣ models                   # Model-specific setup and training scripts
  ┃ ┣ matterport
  ┃ ┗ yolo
+ ┣ input                    # Input images to run predictions on with trained models
  ┣ output                   # All YOLO/Matterport training runs saved here
+ ┃ ┣ predictions            # Predicted images for YOLO/Matterport sorted by specific run and weights
  ┃ ┣ mrcnn
  ┃ ┗ yolo
  ┣ setup                    # General setup that all models share

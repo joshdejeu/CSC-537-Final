@@ -88,7 +88,7 @@ def predict_images(model, chosen_weight_dir):
     import cv2
     from mrcnn.visualize import display_instances
 
-    images_dir = "predictions"
+    images_dir = "input"
 
     # Get list of all images in the predictions folder
     images_to_predict = [

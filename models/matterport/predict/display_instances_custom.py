@@ -8,8 +8,8 @@ import numpy as np
 import cv2
 import random
 
+# Draw bounding boxes and masks on the image, and return the result as a NumPy array
 def display_instances_custom(image, boxes, masks, class_ids, class_names, scores=None, show_mask=True, show_bbox=True):
-    """Draw bounding boxes and masks on the image, and return the result as a NumPy array."""
     n_instances = boxes.shape[0]
     if not n_instances:
         return image

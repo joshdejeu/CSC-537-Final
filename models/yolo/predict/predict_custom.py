@@ -121,7 +121,7 @@ else:
         confident_input = 0.1
 
 # NOTE : You have to import your own images and manually change the name each time you run this script
-results = model(r"predictions\box.jpg", conf=confident_input) # TODO : Make this dynamic for all images
+results = model(r"input\box.jpg", conf=confident_input) # TODO : Make this dynamic for all images
 
 results[0].show()  # show prediction with boxes/masks
 
