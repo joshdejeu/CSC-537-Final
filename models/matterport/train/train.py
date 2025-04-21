@@ -105,9 +105,12 @@ model.train(dataset_train, dataset_val,
     layers='heads',
     custom_callbacks=callbacks) # Only train on top layers of network
 
+# NOTE : To train all layers, uncomment the following lines, run resume_training.py, or comment the above line and uncomment the below one
+
+# TODO : Make this work like resume_training.py
 # Fine-tune entire model
-model.train(dataset_train, dataset_val,
-    learning_rate=config.LEARNING_RATE / 10,
-    epochs=all_epochs,
-    layers="all",
-    custom_callbacks=callbacks  ) # Trains entire model including ResNet + all heads
+# model.train(dataset_train, dataset_val,
+#     learning_rate=config.LEARNING_RATE / 10,
+#     epochs=all_epochs,
+#     layers="all",
+#     custom_callbacks=callbacks  ) # Trains entire model including ResNet + all heads
