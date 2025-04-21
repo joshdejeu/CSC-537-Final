@@ -1,3 +1,4 @@
+# Matterport Mask R-CNN Setup (Windows Version)
 
 > **Note:** Matterport requires **[Python 3.6.8](https://www.python.org/downloads/release/python-368/)**, avoid Python 3.6.0 since it has outdated SSL root certs
 
@@ -52,10 +53,9 @@ python .\models\matterport\train\resume_training.py
 ```bash
 tensorboard --logdir output/mrcnn
 ```
+Then go to [http://localhost:6006/](http://localhost:6006/)
 
-## 7. Then go to [http://localhost:6006/](http://localhost:6006/)
-
-## 8. Use your trained weights to predict images
+## 7. Use your trained weights to predict images
 ```bash
 python .\models\matterport\predict\predict_custom.py
 ```
