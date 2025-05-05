@@ -5,14 +5,12 @@
 import os
 import shutil
 from ultralytics import YOLO
-
-# TODO : Make this dynamic for all images
-# TODO : Save images with masks and boxes to output/yolo/<run_name>/<weight_name>/<image_name>.jpg/png/webp etc
-
-# NOTE : You have to import your own images and manually change the name each time you run this script
+from glob import glob
 
 ROOT_DIR = os.getcwd()
+INPUT_DIR = os.path.join(ROOT_DIR, "input")
 PRETRAINED_DIR = os.path.join(ROOT_DIR, "models", "yolo", "pt_weights")
+BASE_OUTPUT_DIR = os.path.join(ROOT_DIR, "output", "predictions", "yolo", "pretrained")
 os.makedirs(PRETRAINED_DIR, exist_ok=True)
 
 # Moves downloaded pretrained weights to a permanent directory
@@ -33,16 +31,14 @@ YOLO_MODELS = [
 ]
 
 print("Available pretrained YOLOv8 segmentation models:")
-print(" - [0] yolov8n-seg.pt  (Nano)")
-print(" - [1] yolov8s-seg.pt  (Small - default)")
-print(" - [2] yolov8m-seg.pt  (Medium)")
-print(" - [3] yolov8l-seg.pt  (Large)")
-print(" - [4] yolov8x-seg.pt  (X-Large)\n")
+for idx, name in enumerate(YOLO_MODELS):
+    print(f" - [{idx}] {name}")
 
 # Get user selection
 selected = input("Select a pretrained model [1]: ").strip()
 if selected not in ["0", "1", "2", "3", "4"]:
     selected = "1"  # default
+
 
 weights = YOLO_MODELS[int(selected)]
 
@@ -61,13 +57,25 @@ else:
     except ValueError:
         print("[!] Invalid input, defaulting to 0.1.")
         confident_input = 0.1
+        
+# Find all images
+input_images = glob(os.path.join(INPUT_DIR, "*.*"))
+if not input_images:
+    print("[!] No images found in input/. Exiting.")
+    exit(1)
 
-# NOTE : You have to import your own images and manually change the name each time you run this script
-results = model(r"input\box.jpg", conf=confident_input) # TODO : Make this dynamic for all images
+# Set output save path
+save_dir = os.path.join(BASE_OUTPUT_DIR, weights.replace(".pt", ""))
+os.makedirs(save_dir, exist_ok=True)
 
-results = model(r"input\box.jpg", conf=0.1) # Make this dynamic for all images
 
-results[0].show()  # show prediction with boxes/masks
+# Predict on each image and save
+for img_path in input_images:
+    print(f"Predicting {img_path}...")
+    results = model(img_path, conf=confident_input)
+    img_name = os.path.basename(img_path)
+    save_path = os.path.join(save_dir, img_name)
+    results[0].save(filename=save_path)
 
 # Print all detections
 # print(results[0].boxes) # Bounding boxes

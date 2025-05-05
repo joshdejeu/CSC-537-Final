@@ -1,6 +1,10 @@
 # Images to predict with trained models
 input/*
 
+# Mask R-CNN with TF2 artifacts from pip instlal
+models/matterport/config/build/
+models/matterport/config/*.egg-info/
+
 # Training runs and logs
 output/yolo/*
 output/mrcnn/*
@@ -35,8 +39,10 @@ tmp/*
 # Python Virtual Enviroment
 envs/matterport_env/*
 envs/yolo_env/*
+envs/detectron_env/*
 !envs/matterport_env/.gitkeep
 !envs/yolo_env/.gitkeep
+!envs/detectron_env/.gitkeep
 
 # Any cached python info
 **/__pycache__/

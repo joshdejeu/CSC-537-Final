@@ -1,4 +1,6 @@
 # Run this to see if you have GPU available (you may need to reinstall pytorch for older GPU)
+# pip install torch
+
 import torch
 def main():
     print("\nTorch version: ", torch.__version__) # Verifys PyTorch installation
@@ -7,3 +9,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# CUDA 12.1 for 5070
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# Use [this site](https://www.techpowerup.com/gpu-specs/geforce-rtx-5070.c4218) to find the cuda version required for your GPU

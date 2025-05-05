@@ -76,12 +76,13 @@ def main():
     # Train the model (if needed, this will pick up from the selected model and continue training)
     model.train(
         data="datasets/mju.yaml",
-        project="output/yolo", # Output directory
+        project="output/yolo",  # Output directory
         epochs=50,
-        imgsz=640,  # Adjust if needed
-        # TODO : get the correct folder name and continue training from there
-        name="RESUMED",  # Save to the same folder (or change if you want a new name)
-        resume=True  # Automatically resume from the selected checkpoint
+        imgsz=640,              # Adjust if needed
+        name=selected_run,       # Save to the same folder
+        resume=True,             # Automatically resume with same settings
+        lr0=0.0002,             # 10x smaller to fine-tune without wrecking weights
+        patience=20,            # Early stop if no improvement
     )
 
 if __name__ == "__main__":

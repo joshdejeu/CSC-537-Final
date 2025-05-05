@@ -69,7 +69,12 @@ def main():
         project="output/yolo", # Output directory
         epochs=epochs,
         imgsz=imgsz, # Must be a multiple of 32
-        name=name
+        name=name,
+        batch=8,            # 12gb VRAM
+        workers=4,          # 6 core/12 thread CPU
+        lr0=0.002,         # Safer learning rate when using smaller batches
+        optimizer="AdamW",  # Handles smaller batches better than SGD
+        amp=False           # (optional, if you get mixed precision errors)
     )
 
 if __name__ == "__main__":
