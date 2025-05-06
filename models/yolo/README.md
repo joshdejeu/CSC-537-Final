@@ -53,7 +53,12 @@ python .\models\yolo\train\train.py
 python .\models\yolo\train\resume_training.py
 ```
 
-## 7. Use your trained weights to predict images
+## 7. Evalutate your model
+```bash
+python models\yolo\utils\evaluate.py
+```
+
+## 8. Use your trained weights to predict images
 ```bash
 python .\models\yolo\predict\predict_custom.py
 ```

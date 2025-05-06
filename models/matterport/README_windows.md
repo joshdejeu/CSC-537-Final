@@ -55,7 +55,12 @@ tensorboard --logdir output/mrcnn
 ```
 Then go to [http://localhost:6006/](http://localhost:6006/)
 
-## 7. Use your trained weights to predict images
+## 7. Evalute the model
+```bash
+python models\matterport\utils\matterport_evaluation.py
+```
+
+## 8. Use your trained weights to predict images
 ```bash
 python .\models\matterport\predict\predict_custom.py
 ```
@@ -65,3 +70,8 @@ ___
 - [CUDA 10.0](https://developer.nvidia.com/cuda-10.0-download-archive)
 - [cuDNN 7.4](https://developer.nvidia.com/rdp/cudnn-archive)
 > **Note:** Make sure to extract the cuDNN files into your CUDA installation directory (usually `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0`)
+
+## Set temporary path for CUDA if it is not in Enviroment Variables
+```bash
+$env:PATH = "E:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;E:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\libnvvp;$env:PATH"
+```
