@@ -1,6 +1,6 @@
-# ============================
-# Trains the baseline model (to compare later)
-# ============================
+# =======================================================================
+# Trains a heads/4+ layers of a YOLO model for a certain number of epochs
+# =======================================================================
 
 import os
 import shutil

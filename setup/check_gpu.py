@@ -1,5 +1,7 @@
+# ===========================================================================================
 # Run this to see if you have GPU available (you may need to reinstall pytorch for older GPU)
 # pip install torch
+# ===========================================================================================
 
 import torch
 def main():

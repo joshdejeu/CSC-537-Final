@@ -1,3 +1,7 @@
+# ===========================================================================================
+# This script evaluates a trained YOLO model on best-performing epoch based on mAP@0.5 (mask)
+# ===========================================================================================
+
 import os
 import pandas as pd
 

@@ -1,6 +1,6 @@
-# ============================
+# ============================================
 # Converting COCO annotations to YOLOv8 format
-# ============================
+# ============================================
 import os
 import json
 from pathlib import Path

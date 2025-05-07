@@ -1,3 +1,7 @@
+# =================================================================
+# Visualize a random image and its corresponding segmentation mask
+# =================================================================
+
 # Gets default image and mask image from a random file in the test folder
 def visualize_random_image_and_mask(image_dir, mask_dir):
     import matplotlib.pyplot as plt

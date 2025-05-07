@@ -1,3 +1,7 @@
+# ================================================================================
+# This script evaluates a trained Mask R-CNN model on a dataset of garbage images.
+# ================================================================================
+
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 

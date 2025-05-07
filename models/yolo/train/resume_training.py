@@ -1,7 +1,7 @@
-# =====================
+# =======================================================
 # Use this file to resume training your previous models
 # (they must have previously trained for atleast 1 epoch)
-# =====================
+# =======================================================
 
 import os
 import shutil

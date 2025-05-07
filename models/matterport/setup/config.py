@@ -1,3 +1,7 @@
+# =================================================================
+# This class configures the Mask R-CNN model for garbage detection.
+# =================================================================
+
 from mrcnn.config import Config
 
 # TODO: Make these options dynamic for every training run

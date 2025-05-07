@@ -27,7 +27,6 @@ def display_available_runs(runs):
         # TODO : Get the default pretrained weights for Matterport
         exit(1)
         return False
-
 # Choose a run from the list of available runs
 # Return the chosen run dir if valid, else return the best run dir
 # TODO : Implement a function to choose the best run based on some metric (in train.py / resume.py)
